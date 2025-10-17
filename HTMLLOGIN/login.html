@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Transporte Sustentável</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="hamb" aria-hidden="true"></div>
+    <div class="title">Telas Figma</div>
+  </header>
+
+  <main class="container">
+    <section class="card login-card" aria-labelledby="welcome">
+      <h1 id="welcome">Seja bem-vindo!</h1>
+      <p class="subtitle">Efetue seu login</p>
+
+      <div class="socials" aria-hidden="true">
+        <button class="social facebook" title="Entrar com Facebook" aria-label="Entrar com Facebook">f</button>
+        <button class="social google" title="Entrar com Google" aria-label="Entrar com Google">G</button>
+      </div>
+
+      <form class="form" onsubmit="event.preventDefault()">
+        <label for="email" class="label">Email ou usuário</label>
+        <input id="email" type="text" placeholder="seu@email.com">
+
+        <label for="senha" class="label">Senha</label>
+        <input id="senha" type="password" placeholder="••••••••">
+
+        <button class="btn primary" type="submit">Acessar</button>
+
+        <div class="forgot">
+          <div>Esqueceu sua senha?</div>
+          <a href="#" class="link">Clique aqui</a>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

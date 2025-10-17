@@ -1,0 +1,53 @@
+:root{
+  --bg:#f2f2f2;
+  --card:#fff;
+  --green:#2ea64a;
+  --muted:#666;
+  --radius:10px;
+  --shadow:0 8px 24px rgba(0,0,0,0.12);
+}
+
+*{box-sizing:border-box}
+body{ margin:0; font-family:Inter, Roboto, Arial; background:var(--bg); color:#111 }
+.topbar{
+  display:flex;align-items:center;gap:12px;background:#222;color:#fff;padding:12px 16px;
+}
+.hamb{ width:28px;height:18px;background:linear-gradient(#fff 2px, transparent 2px) no-repeat center/16px 16px;border-radius:3px;opacity:0.95 }
+.title{flex:1;text-align:center;font-weight:600}
+
+.container{ max-width:420px;margin:20px auto;padding:0 14px }
+
+.card{ background:var(--card); border-radius:8px; padding:24px; box-shadow:none; text-align:center }
+
+.calc-card h2{ font-size:20px; margin:0 0 12px; font-weight:700 }
+
+.route{ display:flex; justify-content:center; margin-bottom:12px }
+.route-input{
+  width:92%;
+  padding:14px 16px;
+  border-radius:12px;
+  border:1px solid #eee;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  font-size:15px;
+  text-align:left;
+}
+
+.btn{ display:block; width:84%; margin:12px auto; padding:12px 14px; border-radius:10px; border:none; cursor:pointer; font-weight:700 }
+.btn.primary{ background:var(--green); color:#fff }
+
+.hero-figure{ width:100%; margin:14px 0; display:block; text-align:center }
+.hero-img{
+  width:86%;
+  height:140px;
+  object-fit:cover;
+  border-radius:8px;
+  background:linear-gradient(90deg,#e6f6f2,#f7faf7);
+  display:block; margin:0 auto;
+}
+
+.tagline{ margin-top:10px; font-weight:600 }
+
+@media (max-width:420px){
+  .calc-card{ padding:20px }
+  .hero-img{ height:130px; width:92% }
+}

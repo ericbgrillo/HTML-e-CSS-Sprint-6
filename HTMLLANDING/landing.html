@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Transporte Sustentável — Calculadora</title>
+  <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="hamb" aria-hidden="true"></div>
+    <div class="title">Telas Figma</div>
+  </header>
+
+  <main class="page">
+    <section class="landing" aria-labelledby="landing-title">
+      <h1 id="landing-title" class="hero-title">Transporte Sustentável: Menos Poluição, Mais Futuro</h1>
+      <p class="hero-sub">Descubra como pequenas mudanças no transporte diário podem reduzir sua pegada de carbono!</p>
+
+      <a class="cta" href="#calculator">Comece Agora</a>
+
+      <h2 class="section-title">Benefícios do Transporte Sustentável</h2>
+
+      <div class="benefits">
+        <article class="benefit">
+          <h3>Economia de Energia</h3>
+          <p class="muted">Menos combustível, mais eficiência.</p>
+        </article>
+
+        <article class="benefit">
+          <h3>Redução de Poluição</h3>
+          <p class="muted">Menos CO₂ na atmosfera.</p>
+        </article>
+
+        <article class="benefit">
+          <h3>Saúde e Bem-Estar</h3>
+          <p class="muted">Caminhar e pedalar melhoram sua saúde.</p>
+        </article>
+      </div>
+
+      <h2 id="calculator" class="section-title">Calculadora de Emissão</h2>
+
+      <div class="calc-area">
+        <form class="calc-form" onsubmit="event.preventDefault(); calcular();">
+          <label for="tipo">Tipo de transporte</label>
+          <select id="tipo">
+            <option value="carro">Carro (gasolina)</option>
+            <option value="moto">Moto</option>
+            <option value="onibus">Ônibus (urbano)</option>
+            <option value="bicicleta">Bicicleta</option>
+          </select>
+
+          <label for="km">Distância percorrida (km)</label>
+          <input id="km" type="number" min="0" placeholder="0">
+
+          <button class="btn calc-btn" type="submit">Calcular Emissão</button>
+        </form>
+
+        <div class="result" id="result">
+          <div class="result-title">Você emitiu</div>
+          <div class="result-value" id="resultValue">— KG</div>
+          <div class="result-sub">de CO₂</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const factors = {
+      carro: 0.192,
+      moto: 0.12,
+      onibus: 0.089,
+      bicicleta: 0
+    };
+
+    function calcular(){
+      const tipo = document.getElementById('tipo').value;
+      const km = parseFloat(document.getElementById('km').value) || 0;
+      const factor = factors[tipo] ?? 0.19;
+      const emission = +(km * factor).toFixed(2);
+      const el = document.getElementById('resultValue');
+      el.textContent = (emission).toLocaleString('pt-BR', {minimumFractionDigits: emission % 1 ? 2 : 0}) + " KG";
+    }
+  </script>
+</body>
+</html>
